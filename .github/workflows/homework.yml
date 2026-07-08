@@ -1,0 +1,12 @@
+on: push
+jobs:
+  build-python:
+    runs-on: ubuntu-latest
+    container: python:3.11
+    steps:
+      - run: echo "TESTING"
+      - run: python --version
+      - run: pip --version
+      - uses: actions/checkout@v3
+      - run: pip install requests
+      - run: python app.py
